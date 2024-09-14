@@ -1,7 +1,7 @@
 import os
 import pandas as pd
 
-def read_data(root_dir='../data', prefix='dlt_'): #prefix='dlt_' or 'ssq'
+def read_data(root_dir='../data', prefix='dlt_'): #prefix='dlt_' or 'ssq' or 'Powerball_'
     csv_files = [file for file in os.listdir(root_dir) if file.startswith(prefix) and file.endswith('.csv')]
     csv_files.sort()
     concatenated_data = pd.DataFrame()

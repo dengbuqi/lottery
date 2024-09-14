@@ -7,8 +7,8 @@ from scipy.stats import chi2_contingency
 
 ROOT_DIR = '../data'
 
-dlt_data = rd(ROOT_DIR, 'dlt_') # 大乐透 5+2
-ssq_data = rd(ROOT_DIR, 'ssq_') # 双色球 6+1
+dlt_data = rd(ROOT_DIR, 'dlt_') # 大乐透 5/35+2/16
+ssq_data = rd(ROOT_DIR, 'ssq_') # 双色球 6/33+1/16
 
 dlt_red_balls = dlt_data['Red Balls'].values.flatten()
 dlt_blue_balls = dlt_data['Blue Balls'].values.flatten()
@@ -87,6 +87,7 @@ def chi_square_test(freq, balls_type=''):
         print("结果：拒绝独立性假设，历史中奖号码与当前号码可能存在关联。")
     else:
         print("结果：无法拒绝独立性假设，历史中奖号码与当前号码无显著关联。")
+disribution()
 chi_square_test(dlt_red_freq, 'DLT Red Balls')
 chi_square_test(dlt_blue_freq, 'DLT Blue Balls')
 chi_square_test(ssq_red_freq, 'SSQ Red Balls')
